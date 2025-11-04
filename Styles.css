@@ -2,12 +2,17 @@
             --primary: #6c63ff;
             --secondary: #ff6584;
             --dark: #2a2a3c;
+            --dark-footer: #1a1a2e;
             --light: #f8f9fa;
             --gray: #8a8aa0;
             --transition: all 0.3s ease;
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.2);
             --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --light-background: #ffffff;
+            --light-header: #f0f0f0;
         }
+    
 
         * {
             margin: 0;
@@ -19,6 +24,23 @@
         html {
             scroll-behavior: smooth;
         }
+
+        [data-theme="dark"] {
+
+            --primary: #bb86fc;
+            --secondary: #03dac6;
+            --background: #121212;  /* Dark Mode background */
+            --text-color: #e1e1e1;  /* Dark Mode text */
+            --gray: #a1a1a1;
+              --light: #161616;
+              --shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+              --shadow-hover: 0 20px 50px rgba(88, 87, 87, 0.76);
+            --dark : white;
+            --light-background: #272727e8;
+            --dark-footer: #4f4f647e;
+            --light-header: #1b1919;
+        }
+        
 
         body {
             background-color: var(--light);
@@ -101,7 +123,7 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
+            background:var(--light-header);
             box-shadow: var(--shadow);
             transition: var(--transition);
         }
@@ -149,6 +171,7 @@
         .nav-links li {
             margin-left: 30px;
         }
+     
 
         .nav-links a {
             text-decoration: none;
@@ -194,6 +217,7 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--dark);
+
         }
 
         /* Hero Section */
@@ -228,7 +252,7 @@
 
         /* About Section */
         .about {
-            background-color: white;
+            background-color: var(--light);
         }
 
         .about-content {
@@ -278,7 +302,7 @@
 
         .stat-item:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-hover);
         }
 
         .stat-number {
@@ -339,7 +363,7 @@
         /* Experience & Education Section */
 
           .achievements {
-            background-color: white;
+            background-color: var(--light);
         }
 
         .achievements-container {
@@ -349,7 +373,7 @@
         }
 
         .achievement-card {
-            background: white;
+            background: var(--light-background);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -501,7 +525,7 @@
         }
 
         .service-card {
-            background: white;
+            background: var(--light-background);
             padding: 40px 30px;
             border-radius: 10px;
             text-align: center;
@@ -526,7 +550,7 @@
         }
         
          .service-card.animate-on-scroll.animated:hover i {
-            color: white;
+            color: var(--dark);
         }
 
         .service-icon {
@@ -564,7 +588,7 @@
         }
 
         .modal-content {
-            background: white;
+            background: var(--light-background);
             margin: auto;
             width: 90%;
             max-width: 800px;
@@ -714,7 +738,7 @@
         }
 
         .projects {
-            background-color: white;
+            background-color: var(--light);
         }
 
         .projects-grid {
@@ -823,7 +847,7 @@
         }
 
         .contact-form {
-            background: white;
+            background: var(--light-background);
             padding: 30px;
             border-radius: 10px;
             box-shadow: var(--shadow);
@@ -837,7 +861,9 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
+           
         }
+      
 
         .form-control {
             width: 100%;
@@ -846,6 +872,7 @@
             border-radius: 5px;
             font-size: 1rem;
             transition: var(--transition);
+            background: var(--light-background);
         }
 
         .form-control:focus {
@@ -858,9 +885,15 @@
             resize: vertical;
         }
 
+        .msg{
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+
         /* Footer */
         footer {
-            background: var(--dark);
+            background: var(--dark-footer);
             color: white;
             padding: 50px 0 20px;
         }
@@ -966,6 +999,51 @@
             opacity: 1;
             transform: translateY(0);
         }
+         .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            visibility: hidden;
+            cursor: pointer;
+            opacity: 0;
+            
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+            
+            
+        }
+
+        .back-to-top:hover {
+            background: var(--gradient);
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
         /* Responsive Styles */
         @media (max-width: 992px) {
@@ -1004,7 +1082,7 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 70px);
-                background: white;
+                background: var(--light-header);
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
