@@ -1110,22 +1110,7 @@
         }
 
         @media (max-width: 576px) {
-     .nav-links a:hover   .tooltip {
-        
-    display: block;
-    position: relative;
-    transform: none;
-    background: transparent;
-    color: #00bfff;
-    margin-top: 4px;
-    font-size: 13px;
-
- 
-        }
-        a i {
-    display: block;
-    margin: 0 auto;
-  }
+          
                .modal-title {
             font-size: 1.3rem;
             font-weight: 700;
@@ -1154,7 +1139,7 @@
                 text-align: left;
             }
             .achievements {
-            background-color: white;
+            background-color: var(--light);
         }
 
         .achievements-container {
@@ -1164,7 +1149,7 @@
         }
 
         .achievement-card {
-            background: white;
+            background:  var(--light-background);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
