@@ -7,17 +7,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="Styles.css">
     <link rel="icon" type="image/png" href="download.png">
-  
+   
 </head>
 <body>
 
+    
+ 
 
-   
-    <!-- Header -->
+
+      <!-- Header -->
     <header>
-        
         <div class="container header-container">
             <a href="#" class="logo">T<span>Q</span></a>
+              <i class="fas fa-play" id="playIcon" style="font-size: 25px; cursor: pointer;"> <span style="font-size: small; font-weight: bold;" id="playSoundLabel">Play Sound</span></i>
+
+<audio id="myAudio" loop >
+  <source src="corporate-background-music-431083.mp3" type="audio/mpeg" >
+  Your browser does not support the audio element.
+</audio>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -32,14 +39,8 @@
                 <li><a href="#projects" title="Projects"><i class="fas fa-folder-open"></i> <span class="tooltip">Projects</span></a></li>
                 <li><a href="#contact" title="Contact"><i class="fas fa-envelope"></i> <span class="tooltip">Contact</span></a></li>
                 <li><i class="fas fa-moon" id="theme-toggle" style="cursor: pointer;" title="Toggle Dark Mode"></i></li>
-               <li>
-  <i class="fas fa-play" id="playIcon" style="font-size: 25px; cursor: pointer;"></i>
-</li>
-<audio id="myAudio" loop>
-  <source src="zQyTrkVdtvc.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-                
+               
+
 
             </ul>
         </div>
@@ -50,7 +51,10 @@
         <div class="container hero-content">
             <h1>Tony Qaabar</h1>
             <p>Creative Developer & Problem Solver</p>
-            <a href="#projects" class="btn">View My Work</a>
+            <div class="hero-btns">
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="#contact" class="btn ">Contact Me</a>
+            </div>
         </div>
     </section>
 
@@ -60,7 +64,7 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-image animate-on-scroll">
-                    <img src="IMG_20250926_163545-removebg-preview.png" alt="Tony Qaabar">
+                    <img src="Screenshot 2025-11-04 215911.png" alt="Tony Qaabar">
                 </div>
                 <div class="about-text animate-on-scroll">
                     <h3>Creative Problem Solver with Passion for Innovation</h3>
@@ -69,12 +73,13 @@
                     
                     <div class="stats">
                         <div class="stat-item animate-on-scroll">
-                            <div class="stat-number" data-count="150">0</div>
+                           <div class="stat-number" data-count="50">0</div>
                             <div class="stat-text">Projects Completed</div>
                         </div>
-                        <div class="stat-item animate-on-scroll">
-                            <div class="stat-number" data-count="98">0</div>
+                        <div class="stat-item animate-on-scroll" id="clients-stat">
+                            <div class="stat-number" data-count="30">0</div>
                             <div class="stat-text">Satisfied Clients</div>
+                            <button class="View-btn" style="margin-top: 10px; cursor: pointer; background: var(--gradient); border: none; color: white; padding: 10px 15px; border-radius: 5px;" onclick="openTestimonials()">View Testimonials</button>
                         </div>
                         <div class="stat-item animate-on-scroll">
                             <div class="stat-number" data-count="5">0</div>
@@ -86,6 +91,110 @@
         </div>
     </section>
 
+    <!-- Client Testimonials Modal -->
+    <div class="testimonials-modal" id="testimonials-modal">
+        <div class="testimonials-content">
+            <div class="testimonials-header">
+                <h3 class="testimonials-title">Client Testimonials</h3>
+                <button class="testimonials-close">&times;</button>
+            </div>
+            <div class="testimonials-body">
+                <div class="testimonial-slider">
+                    <button class="testimonial-arrow prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="testimonial-arrow next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <div class="testimonial-track">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <img src="Screenshot 2025-11-05 183058.png" alt="Client" class="client-image">
+                                <h4 class="client-name">Assad Murra</h4>
+                                <p class="client-position">CEO, TechSolutions Inc.</p>
+                                <div class="client-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="client-testimonial">
+                                    "Working with Tony was an absolute pleasure. He transformed our outdated website into a modern, responsive platform that has significantly increased our conversion rates. His attention to detail and creative solutions exceeded our expectations."
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <img src="Screenshot 2025-11-05 200731.png" alt="Client" class="client-image">
+                                <h4 class="client-name">Francis Lolas</h4>
+                                <p class="client-position">Marketing Director, GlobalBrands</p>
+                                <div class="client-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p class="client-testimonial">
+                                    "Tony's expertise in UI/UX design helped us create an intuitive user experience that our customers love. He was responsive, professional, and delivered the project ahead of schedule. I would highly recommend his services to anyone looking for quality web development."
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <img src="Screenshot 2025-11-05 201557.png" alt="Client" class="client-image">
+                                <h4 class="client-name">Ramez Michel</h4>
+                                <p class="client-position">Founder, StartupXYZ</p>
+                                <div class="client-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="client-testimonial">
+                                    "As a startup, we needed a developer who could understand our vision and bring it to life on a tight budget. Tony was the perfect choice. He not only delivered a beautiful, functional website but also provided valuable insights that improved our overall digital strategy."
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 4 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <img src="Screenshot 2025-11-05 202100.png" alt="Client" class="client-image">
+                                <h4 class="client-name">Georgina Rodríguez (Cristiano's Wife)</h4>
+                                <p class="client-position">CTO, EnterpriseSolutions</p>
+                                <div class="client-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="client-testimonial">
+                                    "We hired Tony to rebuild our internal management system, and the results have been outstanding. The new system is faster, more intuitive, and has significantly improved our team's productivity. Tony's problem-solving skills and technical expertise are truly impressive."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-nav">
+                        <div class="testimonial-dot active" data-slide="0"></div>
+                        <div class="testimonial-dot" data-slide="1"></div>
+                        <div class="testimonial-dot" data-slide="2"></div>
+                        <div class="testimonial-dot" data-slide="3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
@@ -618,36 +727,49 @@
                 <div class="footer-social">
                     <h3>Follow Me</h3>
                     <div class="social-icons">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">  <i class="fas fa-envelope" ></i></a>
+                        <a href="https://github.com/tonyq11"><i class="fab fa-github"></i></a>
+                        <a href="https://www.whatsapp.com/?lang=en"><i class="fab fa-whatsapp" ></i></a>
+                        <a href="https://www.instagram.com/tony.q11"><i class="fab fa-instagram" ></i></a>
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Tony Qaabar. All Rights Reserved.</p>
+                <p> &copy; 2025 Tony Qaabar. All Rights Reserved.
+                    
+
+                </p>
             </div>
         </div>
     </footer>
+
     <div class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
-    <script>
+   
+<script>
+
   const audio = document.getElementById('myAudio');
   const icon = document.getElementById('playIcon');
+  const label = document.getElementById('playSoundLabel');
 
   icon.addEventListener('click', () => {
+     const audio = document.getElementById('myAudio');
+  audio.volume = 0.4; // 40% volume
     if(audio.paused){
       audio.play();
       icon.classList.remove('fa-play');
       icon.classList.add('fa-pause');
+      label.textContent = 'Pause Sound';    
+      
     } else {
       audio.pause();
       icon.classList.remove('fa-pause');
       icon.classList.add('fa-play');
+        label.textContent = 'Play Sound';
     }
   });
+
 </script>
     <script>
              const backToTopButton = document.querySelector('.back-to-top');
@@ -669,7 +791,7 @@
     const html = document.documentElement;
 const themeToggle = document.getElementById('theme-toggle');
 
-// تحميل الثيم المحفوظ عند فتح أو تحديث الصفحة
+
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme') || 'light';
   html.setAttribute('data-theme', savedTheme);
@@ -677,7 +799,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateIcon(savedTheme);
 });
 
-// عند الضغط على الأيقونة
+
 themeToggle.addEventListener('click', () => {
   const currentTheme = html.getAttribute('data-theme');
   const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -687,7 +809,7 @@ themeToggle.addEventListener('click', () => {
   document.title = newTheme === 'dark' ? 'Portfolio | Dark Mode' : 'Portfolio | Light Mode';
 });
 
-// عند التحويم بالماوس
+
 themeToggle.addEventListener('mouseover', () => {
   const currentTheme = html.getAttribute('data-theme');
   themeToggle.title = currentTheme === 'light'
@@ -695,7 +817,7 @@ themeToggle.addEventListener('mouseover', () => {
     : 'Switch to Light Mode ☀️';
 });
 
-// تحديث الأيقونة
+
 function updateIcon(theme) {
   if (theme === 'dark') {
     themeToggle.classList.remove('fa-moon');
@@ -724,7 +846,7 @@ function updateIcon(theme) {
           
             const closeButtons = document.querySelectorAll('.modal-close');
 
-            // Open modal when project card is clicked
+           
 
            
 
@@ -758,7 +880,7 @@ function updateIcon(theme) {
             });
         });
 
-        // Previous JavaScript remains the same
+   
     </script>
 
   <script>
@@ -772,6 +894,7 @@ fetch(scriptURL, { method: 'POST', body: new FormData(form)})
   .then(response => {
       if (response.ok) {
           msg.innerHTML = "Message sent successfully!";
+          msg.style.color = "green";
             setTimeout(function() {
                 msg.innerHTML = "";
             }, 5000);
@@ -905,8 +1028,114 @@ fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             statsObserver.observe(aboutSection);
         }
         
-        // Form submission
+      
      
     </script>
+   <script>
+  const statItem = document.getElementById('clients-stat');
+  const popup = document.getElementById('clients-popup');
+  const closeBtn = document.querySelector('.close-btn');
+
+  statItem.addEventListener('click', () => {
+    popup.style.display = 'flex';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    popup.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === popup) popup.style.display = 'none';
+  });
+</script>
+<script>
+    // Testimonials Slider Functionality
+    const testimonialsModal = document.getElementById('testimonials-modal');
+    const testimonialTrack = document.querySelector('.testimonial-track');
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    const testimonialDots = document.querySelectorAll('.testimonial-dot');
+    const prevButton = document.querySelector('.testimonial-arrow.prev');
+    const nextButton = document.querySelector('.testimonial-arrow.next');
+    const closeButton = document.querySelector('.testimonials-close');
+    
+    let currentSlide = 0;
+    const totalSlides = testimonialSlides.length;
+    
+    // Open testimonials modal
+    function openTestimonials() {
+        testimonialsModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        goToSlide(0); // Reset to first slide when opening
+    }
+    
+    // Close testimonials modal
+    function closeTestimonials() {
+        testimonialsModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    // Go to specific slide
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        testimonialTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update active dot
+        testimonialDots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+    
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        goToSlide(currentSlide);
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        goToSlide(currentSlide);
+    }
+    
+    // Event listeners
+    closeButton.addEventListener('click', closeTestimonials);
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+    
+    // Dot navigation
+    testimonialDots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            const slideIndex = parseInt(this.getAttribute('data-slide'));
+            goToSlide(slideIndex);
+        });
+    });
+    
+    // Close modal when clicking outside content
+    testimonialsModal.addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeTestimonials();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && testimonialsModal.classList.contains('active')) {
+            closeTestimonials();
+        }
+    });
+    
+    // Keyboard navigation for slider
+    document.addEventListener('keydown', function(e) {
+        if (testimonialsModal.classList.contains('active')) {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+        }
+    });
+
+    // REMOVED AUTO-SLIDE FEATURE - User controls navigation manually
+</script>
 </body>
 </html>
